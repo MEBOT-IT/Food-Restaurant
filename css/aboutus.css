@@ -1,0 +1,494 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+}
+
+body  {
+    background-image: url("/assests/images/2-2-2.png");
+    
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-container {
+    perspective: 800px;
+  }
+  
+  .logo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateLogo 10s infinite linear;
+  }
+
+  .front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2%;
+    height: 2%;
+    backface-visibility: hidden;
+  }
+
+  .front {
+    transform: rotateY(0deg);
+    height: 40px;
+    width: 40px;
+  }
+
+.front img{
+    height: 100px;
+    width: 100px;
+    margin-left: 40px;
+  }
+
+  .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.navbar{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    margin: 15px auto;
+}
+.logo{
+   font-size: 30px;
+   font-weight: bold;
+   letter-spacing: 1.5px;
+}
+.logo p{
+    float: left;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    /* margin-right: 90px; */
+    margin-left: 250PX;
+    margin-bottom: 100px;
+}
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: #ffe4c4;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    /* padding: 2px 32px; */
+    padding-left: 50px;
+}
+nav ul li a:hover{
+    color:rgb(214, 111, 74);
+    text-decoration: underline coral;
+    transition: .5s ease-in-out;
+}
+
+nav ul li .active{
+    color: black;
+}
+
+.header-img img{
+    position: relative;
+    bottom: 10px;
+}
+
+.slider{
+    width: 100%;
+    height: 20%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+
+}
+#slideImg{
+    width: 100%; 
+    height: 100%;
+    /* position:fixed; */
+    object-fit: cover;
+}
+
+/* 
+.logo{
+   font-size: 30px;
+   font-weight: bold;
+   letter-spacing: 1.5px;
+}
+.logo p{
+    float: left;
+    color: #fff;
+    text-transform: uppercase;
+}
+nav ul{
+    float: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 32px;
+}
+nav ul li a:hover{
+    color:orange;
+}
+.t1{
+    width: 60%;
+    padding-top: 50px;
+    margin:160px auto 0;
+    text-align: center;
+    color: white;
+} */
+.t1 h1{
+    color: #ffe4c4;
+    position: absolute;
+    left: 38%;
+    top: 280px;
+    font-size: 60px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+/*---------------about-----------------*/
+
+.about{
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .about_image img{
+    width: 650px;
+}
+
+.about .about_tag h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.about .about_tag p{
+    width: 750px;
+    margin-right: 59px;
+    line-height: 27px;
+    margin-bottom: 30px;
+    color: goldenrod ;   /* #8d1111*/
+    font-size: 22px;
+    text-align: justify;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/*-------hover image effect2--------*/
+.card {
+    margin-top: 26px;
+    position: relative;
+    width: 350px;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    background: peachpuff;
+  }
+  
+  .card:hover {
+    height: 370px;
+    transition: 0.3s ease-out;
+  }
+  
+  .imgbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(-80px);
+    z-index: 99;
+  }
+  
+  .badge1 {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .imgdesc {
+    padding: 10px 20px;
+    margin-top: 50px;
+    text-align: center;
+    transform: translateY(-450px);
+    opacity: 0;
+    /* transition: 0.3s; */
+  }
+  
+  .card:hover > .imgdesc {
+    opacity: 1;
+    transform: translateY(-180px) ;
+  }
+
+  .card h2 {
+    color: #490404;
+    margin: 14px;
+  }
+
+  .card p{
+    color: #490303;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    
+  }
+  /*------- end hover image effect2--------*/
+
+/*------------------blog------------------*/
+
+.blog{
+    width: 100%;
+    height: auto;
+    padding: 0px 0 20px 0;
+}
+
+.blog h1{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: goldenrod;
+
+}
+
+.blog .blog_box{
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+.blog .blog_box .blog_card_2{
+    height: 350px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    margin-bottom: 0px;
+    margin-top: -45px;
+}
+
+.blog .blog_box .blog_card_2 .blog_tag{
+    margin-right: 50px;
+}
+
+.blog .blog_box .blog_card_2 .blog_tag p{
+    line-height: 27px;
+    color:goldenrod;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-align: justify;
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-bottom: 34px;
+}
+.contaner{
+    width: 100%;
+    height: 100%;
+}
+
+.contaner img{
+    width: 460px;
+    height: 360px;
+    object-position: right;
+    margin: auto;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in;
+    /* margin-right: 5px; */
+}
+
+.contaner img:hover{
+    filter: grayscale(0);
+}
+
+
+.blog .blog_box .blog_card{
+    height: 350px;
+    display: flex;
+    align-items: center;
+    /* text-align: justify; */
+    margin: 0 auto;
+
+}
+
+
+  
+/*-------rotation of a pic-------*/
+/* .borders{
+    width: 100%;
+    height: 100%;
+} */
+
+
+.borders img{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    transition: 1s;
+    
+}
+/* .borders:hover{
+
+    transform: rotate(360deg);
+} */
+.borders:hover img{
+    transform: rotate(-360deg);
+}
+/*-------rotation of a pic end-------*/
+
+/*-------paragraph style---------*/
+
+.blog .blog_box .blog_card .blog_tag{
+    margin-left: 50px;
+}
+.blog .blog_box .blog_card .blog_tag p{
+    line-height: 27px;
+    color: goldenrod;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-align: justify;
+   margin-right: 38px;
+}
+/* .blog .blog_box hr{
+    width: 90%;
+    height: 2px;
+    margin: 10px auto;
+    background: #fda211;
+    border: 0;
+} */
+
+/*----------------------services------------------*/
+
+.services{
+    width: 100%;
+    height: auto;
+    padding: 25px 0 0 0 ;
+}
+
+.services .services_box{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 0 10px;
+}
+
+.services .services_box .services_card{
+    margin: 0 auto;
+    background: #fde4e4;
+    padding: 10px;
+    text-align: center;
+    cursor:default;
+}
+
+.services .services_box .services_card:hover{
+    background-image: linear-gradient(to right,#b74747,#fde4e4);
+}
+
+
+
+.services .services_box .services_card h2{
+    font-size: 18px;
+    padding: 8px 0;
+    color: #490303;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.services .services_box .services_card p{
+    font-size: 13px;
+    padding: 8px 0;
+    font-weight: 300;
+    color: #490303;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+/* BADGE */
+
+.badge-head{
+    text-align: center;
+    padding-top: 60px;
+    margin-bottom: 10px;
+    font-size: 34px;
+    color: #490303;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.badge_section{
+    display: flex;
+    margin: 30px;
+}
+
+.badge_section img{
+    margin: 10px 20px;
+    width: 290px;
+    height: 280px;
+    filter: blur(2px);
+    border-radius: 50%;
+    /* transition: 1s; */
+}
+
+.badge_section .img-3-bag{
+    border-radius: 50%;
+    width: 270px;
+    height: 260px;
+    margin-top: 20px;
+}
+
+.badge_section img:hover{
+    filter: blur(0px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* FOOTER */
+#foot{
+    width: 100%;
+    height: 90px;
+    background-color: #ffe1bb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#foot a img{
+    margin: 10px 20px;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+}
+
+#margin{
+    color: #490303;
+    float: right;
+    margin-left: 700px;
+}
