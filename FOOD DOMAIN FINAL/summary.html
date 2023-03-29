@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary | Hot 'N' Spicy</title>
+    <link rel="stylesheet" href="/assests/css/summary.css">
+    <link rel="icon" type="image/png" href="/assests/images/front.png" />
+</head>
+<body>
+    <div class="container">
+        <form id="form1">
+            <h3>CUSTOMER INFORMATION</h3>
+        <div class="contact">
+            <div>
+            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Email" required>
+            <input type="text" placeholder="Enter your phone Number" required>
+            </div>
+            <div>
+            <input type="text" placeholder="Address" required>
+            <input type="text" placeholder="Enter the Landmark" required>
+            <input type="text" value="Chennai" required>
+            <input type="text" value="Tamil Nadu" required>
+            <input type="text" placeholder="000 000" required>
+            </div>
+        </div>   
+        <div class="btn-box">
+            <button type="button" id="Next1"> Next</button>
+        </div> 
+        </form>
+
+        <form id="form2">
+            <h3 >OFFERS & BENEFITS</h3>
+            <input type="text" id="coup-id" placeholder="ENTER COUPON CODE" required> <button id="apply-btn">Apply</button>
+            <h3>BILL DETAILS</h3>
+            Total<input type="number" id="total-amount" readonly><br>
+            Discounted Amount<input type="text" id="discounted-amount" readonly><br>
+            Amount to pay<input type="text" id="amount-to-pay" readonly>
+                    <p class="error-message" id="error-message"></p>
+                    <div class="btn-box">
+                        <button type="button" id="Back1"> Back</button>
+                        <button type="button" id="Next2"> Next</button>
+                    </div> 
+                    
+        </form>
+        <form id="form3">
+            <h3 >PAYMENT OPTIONS</h3>
+            <a href="OrderSuccess.html" class="link">COD (cash on delivery)</a> <br><br>
+            <a href="payment-gateway.html" class="link">Credit card/DebitCard/UPI</a> 
+                    <div class="btn-box">
+                        <button type="button" id="Back2"> Back</button>
+                    </div> 
+                    
+        </form>
+        <div class="step-row">
+           <div id="progress"></div>
+           <div class="step-col"><small>Step 1</small></div>
+           <div class="step-col"><small>Step 2</small></div>
+           <div class="step-col"><small>Step 3</small></div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <div class="containerr">
+          <canvas id="wheel"></canvas>
+          <button id="spin-btn">Spin</button>
+          <img src="/assests/images/arrow.png" alt="spinner-arrow" />
+        </div>
+        <div id="final-value">
+          <p>Click On The Spin Button To Start</p>
+          
+        </div>
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Chart JS Plugin for displaying text over chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+    <!-- Script -->
+
+    <script>
+        let wrapper = document.getElementById("wrapper");
+        let button = document.getElementById("Next1");
+
+        button.addEventListener("click", function() {
+          wrapper.style.visibility = "visible";
+        });
+
+        const closeBtn = document.querySelector('.close-btn');
+
+        function hidePopup() {
+          wrapper.style.visibility = "hidden";
+        }
+
+        closeBtn.addEventListener('click', hidePopup);
+
+
+
+
+        var Form1 = document.getElementById("form1");
+        var Form2 = document.getElementById("form2");
+        var Form3 = document.getElementById("form3");
+
+        var Next1 =  document.getElementById("Next1");
+        var Next2 =  document.getElementById("Next2");
+        var Back1 =  document.getElementById("Back1");
+        var Back2 =  document.getElementById("Back2");
+
+        var progress=  document.getElementById("progress");
+
+        Next1.onclick = function() {
+        Form1.style.left = "-650px";
+        Form2.style.left = "40px";
+        progress.style.width ="66%";
+        }
+        Back1.onclick = function() {
+        Form1.style.left = "20%";
+        Form2.style.left = "950px";
+        progress.style.width ="33%";
+        }
+        Next2.onclick = function() {
+        Form2.style.left = "-950px";
+        Form3.style.left = "40px";
+        progress.style.width ="98%";
+        }
+        Back2.onclick = function() {
+        Form2.style.left = "50px";
+        Form3.style.left = "-750px";
+        progress.style.width ="66%";
+        }
+
+        var tt = localStorage.getItem("total");
+        document.getElementById("total-amount").value = tt;
+
+        
+        
+    
+    const wheel = document.getElementById("wheel");
+        const spinBtn = document.getElementById("spin-btn");
+        const finalValue = document.getElementById("final-value");
+        //Object that stores values of minimum and maximum angle for a value
+        const rotationValues = [
+          { minDegree: 0, maxDegree: 30, value: "LUCKY15" },
+          { minDegree: 31, maxDegree: 90, value:  "WELCOME40"},
+          { minDegree: 91, maxDegree: 150, value: "SALE10" },
+          { minDegree: 151, maxDegree: 210, value: "SALE25" },
+          { minDegree: 211, maxDegree: 270, value: "SALE30" },
+          { minDegree: 271, maxDegree: 330, value: "SALE20" },
+          { minDegree: 331, maxDegree: 360, value: "LUCKY15" },
+          
+        ];
+        //Size of each piece
+        const data = [16, 16, 16, 16, 16, 16];
+        //background color for each piece
+        var pieColors = [
+          "#E1A7FF",
+          "#b163da",
+          "#E1A7FF",
+          "#b163da",
+          "#E1A7FF",
+          "#b163da",
+        ];
+        //Create chart
+        let myChart = new Chart(wheel, {
+          //Plugin for displaying text on pie chart
+          plugins: [ChartDataLabels],
+          //Chart Type Pie
+          type: "pie",
+          data: {
+            //Labels(values which are to be displayed on chart)
+            labels: ["40%", "15%", "20%", "30%", "25%","10%"],
+            //Settings for dataset/pie
+            datasets: [
+              {
+                backgroundColor: pieColors,
+                data: data,
+              },
+            ],
+          },
+          options: {
+            //Responsive chart
+            responsive: true,
+            animation: { duration: 0 },
+            plugins: {
+              //hide tooltip and legend
+              tooltip: false,
+              legend: {
+                display: false,
+              },
+              //display labels inside pie chart
+              datalabels: {
+                color: "#ffffff",
+                formatter: (_, context) => context.chart.data.labels[context.dataIndex],
+                font: { size: 24 },
+              },
+            },
+          },
+        });
+        //display value based on the randomAngle
+        const valueGenerator = (angleValue) => {
+          for (let i of rotationValues) {
+            //if the angleValue is between min and max then display it
+            if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+             // finalValue.innerHTML = `<p>Code: </p>`;
+              finalValue.innerHTML = `<label for="offer-code">COPY YOUR COUPON CODE:</label>
+       <input type="text" id="offer-code" value="${i.value}" readonly>`;
+              spinBtn.disabled = false;
+              break;
+            }
+          }
+        };
+        
+        //Spinner count
+        let count = 0;
+        //100 rotations for animation and last rotation for result
+        let resultValue = 101;
+        //Start spinning
+        spinBtn.addEventListener("click", () => {
+          spinBtn.disabled = true;
+          //Empty final value
+          finalValue.innerHTML = `<label for="offer-code">COPY YOUR COUPON CODE:</label>
+                                  <input type="text" id="offer-code" readonly>`;
+          //Generate random degrees to stop at
+          let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
+          //Interval for rotation animation
+          let rotationInterval = window.setInterval(() => {
+            //Set rotation for piechart
+            /*
+            Initially to make the piechart rotate faster we set resultValue to 101 so it rotates 101 degrees at a time and this reduces by 1 with every count. Eventually on last rotation we rotate by 1 degree at a time.
+            */
+            myChart.options.rotation = myChart.options.rotation + resultValue;
+            //Update chart with new value;
+            myChart.update();
+            //If rotation>360 reset it back to 0
+            if (myChart.options.rotation >= 360) {
+              count += 1;
+              resultValue -= 5;
+              myChart.options.rotation = 0;
+            } else if (count > 15 && myChart.options.rotation == randomDegree) {
+              valueGenerator(randomDegree);
+              clearInterval(rotationInterval);
+              count = 0;
+              resultValue = 101;
+            }
+          }, 10);
+        });
+
+
+        
+        
+
+        const offerCodes = {
+  "WELCOME40":"40% ",    
+  "LUCKY15": "15%",      
+  "SALE20": "20%",       
+  "OFFER25": "25%" ,
+  "SALE30" : "30%" ,
+  "SALE10" : "10%",
+  "SALE25" : "25%"
+};
+
+function calculateDiscountedAmount(totalAmount, offCode) {
+  
+  if (offCode in offerCodes) {
+    const discount = offerCodes[offCode];
+   
+    if (typeof(discount) === "number") {
+      
+      const discountedAmount = totalAmount - discount;
+      const amountToPay = discountedAmount > 0 ? discountedAmount : 0;
+      return [discountedAmount, amountToPay];
+    } else if (typeof(discount) === "string") {
+      
+      const percentage = parseInt(discount) / 100;
+      const discountedAmount = totalAmount * percentage;
+      const amountToPay = totalAmount - discountedAmount;
+      return [discountedAmount, amountToPay];
+    }
+    
+  }
+  
+  return [totalAmount, totalAmount];
+}
+
+const totalAmountInput = document.getElementById("total-amount");
+const offCodeInput = document.getElementById("coup-id");
+const applyBtn = document.getElementById("apply-btn");
+const discountedAmountText = document.getElementById("discounted-amount");
+const amountToPayText = document.getElementById("amount-to-pay");
+const errorMessage = document.getElementById("error-message");
+
+applyBtn.onclick = function() {
+  event.preventDefault();
+  const totalAmount = parseFloat(totalAmountInput.value);
+  const offCode = offCodeInput.value.toUpperCase();
+  if (!(offCode in offerCodes)) {
+    errorMessage.textContent = alert("Invalid offer code!");
+    return;
+  }
+  const [discountedAmount, amountToPay] = calculateDiscountedAmount(totalAmount, offCode);
+  errorMessage.textContent = "";
+  discountedAmountText.value = `${discountedAmount.toFixed(2)}`;
+  amountToPayText.value = `${amountToPay.toFixed(2)}`;
+  return;
+}
+
+
+
+    </script>
+</body>
+</html>

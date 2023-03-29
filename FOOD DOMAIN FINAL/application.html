@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Hot 'N' Spicy</title>
+    <link rel="stylesheet" href="/assests/css/application.css">
+    <link rel="icon" type="image/png" href="/assests/images/front.png" />
+</head>
+  <body>
+    <!--
+        HEADER
+    -->
+    
+    <div class="banner">
+        
+      <div class="overlay">
+          <header>
+              <div class="navbar">
+                  <div class="logo-container">
+                      <div class="logo" id="logo">
+                          <a href="home.html">
+                          <div class="front">
+                          <img src="/assests/images/front.png" alt="Logo Front">
+                          </div></a>
+                          
+                          <div class="back">
+                          <img src="/assests/images/back.png" alt="Logo Back">
+                          </div>
+                      </div>
+                  </div> 
+                  <!-- navbar heading -->
+                  <nav>
+                      <div class="menu-icons">
+                          <ul>
+                              <li><a href="home.html">HOME</a></li>
+                              <li><a href="/Aboutus.html">ABOUT US</a></li>    
+                              <li><a href="menu.html">MENU</a></li> 
+                              <li><a href="/services.html">SERVICES</a></li> 
+                              <li><a href="tablereserve.html">BOOK A TABLE</a></li>  
+                              <li><a href="contact.html">CONTACT</a></li> 
+                              
+                              <div class="header-img">
+                                  <li><a href="login.html">
+                                      <img src="/assests/images/loginn - 1.png" width="35px" height="35px">
+                                  </a></li>  </div> 
+                          </ul> 
+                      </div>
+                  </nav>
+              </div>
+          </header>
+          
+      </div>
+  </div>
+      <!-- FORM -->
+    <form  id="form">
+      <h1 class="form-head1"> Application Form</h1>
+      <h4 class="form-head2">Please complete and submit application to be considered.</h4>
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Full name" >
+
+      <label for="email">Email Id:</label>
+      <input type="email" id="email" name="email"  placeholder="Enter Your Email Id">
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="##########">
+
+      <label for="specialty">Speciality:</label>
+      <select id="specialty" name="specialty" >
+        <option value="">Please select a specialty</option>
+        <option value="Indian cuisine">Indian cuisine</option>
+        <option value="Italian cuisine">Italian cuisine</option>
+        <option value="Chettinad cuisine">Chettinad cuisine</option>
+        <option value="French cuisine">French cuisine</option>
+        <option value="Japanese cuisine">Japanese cuisine</option>
+        <option value="Mexican cuisine">Mexican cuisine</option>
+        <option value="Vegetarian cuisine">Vegetarian cuisine</option>
+        <option value="Non Vegetarian cuisine">Non Vegetarian cuisine</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="checkbox">What do you looking for?</label>
+      <input type="radio" name="employment" value="Full-Time">Full-Time<br>
+      <input type="radio" name="employment" value="Part-Time">Part-Time<br>
+
+      <label for="experience">Experience:</label>
+      <textarea id="experience" name="experience" rows="5" placeholder="Experience in years with additional notes"></textarea>
+      
+      <label for="resume" id="resume-con">Resume:</label>
+      <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx" required/><br>
+      
+      <div class="btn-popup">
+        <a href="#logo">
+        <input type="button" value="Submit" onclick="openPopup()"></a>
+        <div class="popup" id="popup">
+          <img src="/assests/images/upload-1.png" alt="upload" >
+          <h2 class="popup-head1">Thank You!</h2>
+          <p class="popup-head2">Your details along with your resume has been successfully submitted.</p>
+          <p class="popup-head3">For further queries, please contact us</p>
+          <button type="button" onclick="closePopup() ">OK</button>
+        </div>
+      </div>
+
+    </form>
+
+<!-- Customer care -->
+    <div class="main_container">
+      <div class="overlay1">
+          <a href="tel:1818-022">
+              <img class="image-54" src="/assests/images/enquiry-13.png" alt="initial" width="70px">
+          </a>
+          <h4 class="section-title">Already applied? </h4>
+          <h4 class="section-content">Please call for inquiry   </h4>
+         <span>Toll Free - </span> <a class="tel-no" href="tel:1818-022">1818-022</a>
+      </div>
+      
+  </div>
+
+  <!-- Footer -->
+  <div id="foot">
+    <div id="media">
+        <a href="https://facebook.com/theriyala-restaurant" class="footer" ><img src="/assests/images/fb.webp" alt="FB logo" class="fb"></a>
+        <a href="https://instagram.com/theriyala-restaurant" class="footer"><img  class="insta" src="/assests/images/ig (2).webp" alt="Instagram logo"></a>
+        <a href="https://twitter.com/theriyala-restaurant" class="footer"><img src="/assests/images/twi.webp" alt="twitter logo" class="twitter"></a>
+    </div>
+    
+    <p id="margin">Copyright &copy; 2023 HOT 'N' SPICY</p>
+  </div>
+
+  <script>
+
+    let popup=document.getElementById("popup");
+
+    function openPopup(){
+      popup.classList.add("open-popup");
+    }
+
+    function closePopup(){
+      popup.classList.remove("open-popup");
+      window.location.reload(true);
+    }
+
+  </script>
+</body> 
+</html>

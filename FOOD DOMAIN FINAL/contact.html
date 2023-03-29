@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form | Hot 'N' Spicy</title>
+    <link rel="stylesheet" href="/assests/css/contact.css">
+    <link rel="icon" type="image/png" href="/assests/images/front.png" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+    <body>
+      <div class="banner">
+        
+        <div class="overlay">
+            <div class="navbar">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="front">
+                            <a href="home.html">
+                        <img src="/assests/images/front.png" alt="Logo Front"></a>
+                        </div>
+                        <div class="back">
+                          <a href="home.html">
+                          <img src="/assests/images/back.png" alt="Logo Back"></a>
+                          </div>
+                    </div>
+                </div>
+                <!-- navbar heading -->
+                <header>
+                    <nav>
+                        <div class="menu-icons">
+                            <ul>
+                                <li><a href="/home.html">HOME</a></li>  
+                                <li><a href="/Aboutus.html">ABOUT US</a></li>  
+                                <li><a href="menu.html">MENU</a></li>  
+                                <li><a href="/services.html">SERVICES</a></li> 
+                                <li><a href="tablereserve.html">BOOK A TABLE</a></li>  
+                                <li><a href="contact.html">CONTACT</a></li>
+                                <div class="header-img">
+                                <li><a href="login.html">
+                                    <img src="/assests/images/login-1-1.png" width="35px" height="35px">
+                                </a></li>  </div>    
+                            </ul> 
+                        </div>
+                    </nav>
+                </header> 
+            </div>
+            
+        </div>
+    </div>
+    </div>
+    <div class="container">
+      <span class="big-circle"></span>
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            "We're just a message away - contact us for any questions or assistance you need!"
+          
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="/assests/images/location.png" class="icon" alt="" />
+              <p>Address: 151,10th Avenue,Anna Nagar,Chennai-600040</p>
+            </div>
+            <div class="information">
+              <img src="/assests/images/email.png" class="icon" alt="" />
+              <p>Email: info@hotnspicy.com</p>
+            </div>
+            <div class="information">
+              <img src="/assests/images/phone.png" class="icon" alt="" />
+              <p>Phone:+91 0987665432</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="social-icons">
+              <a href="https://facebook.com/theriyala-restaurant">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/theriyala-restaurant">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://instagram.com/theriyala-restaurant">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span> 
+            <form onsubmit="return validateForm()" action="contact.html" autocomplete="off">
+            <h3 class="title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" id="name" name="name"  class="input" pattern="[A-Za-z]+" required />
+              <label for="">Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <label for="">Email</label>
+              <input type="email"  id="email"  name="email" class="input" required/>
+              <span>Email</span><br>
+              <span id="emailError" style="color: rgb(254, 252, 252);"></span>
+            </div>
+            <div class="input-container">
+              <input type="tel" id="phone" name="phone" class="input" pattern="[0-9]+" required>
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="SEND" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup-container">
+      <div class="popup">
+        <h2>Subscribe to our Newsletter</h2>
+        <form>
+          <input type="email" placeholder="Enter your email">
+          <button type="submit" class="subscribe">Subscribe</button>
+        </form>
+        <p>Stay updated with our latest news and promotions!</p>
+        <button class="close-btn">&times;</button>
+      </div>
+    </div>
+    <!-- Footer -->
+  <div id="foot">
+    <div id="media">
+        <a href="https://facebook.com/theriyala-restaurant" class="footer" ><img src="/assests/images/fbbrown.png" alt="FB logo" class="fb"></a>
+        <a href="https://instagram.com/theriyala-restaurant" class="footer"><img  class="insta" src="/assests/images/igbrown.png" alt="Instagram logo"></a>
+        <a href="https://twitter.com/theriyala-restaurant" class="footer"><img src="/assests/images/twibrown.png" alt="twitter logo" class="twitter"></a>
+    </div>
+    
+    <p id="margin">Copyright &copy; 2023 HOT 'N' SPICY</p>
+  </div>  
+
+    <script src="/assests/js/app.js">
+    </script><!--java script added-->
+  </body>
+</html>
