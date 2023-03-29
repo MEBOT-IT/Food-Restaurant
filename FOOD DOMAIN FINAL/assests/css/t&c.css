@@ -1,0 +1,30 @@
+body{
+    font-family: 'Gentium Book Plus', serif;
+font-family: 'Kalam', cursive;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Roboto Slab', serif;
+font-family: 'Source Serif Pro', serif;
+line-height: 27px;
+background-image: url(/assests/images/2-2-2-1.png);
+}
+h2{
+    text-align: center;
+    color: #490303;
+}
+h1{
+    text-align: center;
+    color: #490303;
+}
+
+p{
+    transform: translateX(150px);
+    width: 1000px;
+    font-size: 20px;
+    padding: 22px;
+    color:goldenrod;
+    text-align: justify;
+}
+
+a{
+    text-decoration: none;
+}
